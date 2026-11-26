@@ -4,3 +4,4 @@ Diário da horta do campus
 
 oi bb
 
+Se acalma captão gay
