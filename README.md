@@ -1,4 +1,4 @@
-```markdown
+
 # Diário da Horta do Campus
 
 Aplicação web desenvolvida para o controle, registro e consulta histórica das regas realizadas nos canteiros da horta do campus. O sistema permite acompanhar quando cada cultivo recebeu irrigação pela última vez, garantindo rastreabilidade operacional e evitando falhas ou excessos no manejo hídrico.
