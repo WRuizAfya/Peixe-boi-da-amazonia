@@ -1,0 +1,105 @@
+# Diário da horta do campus: especificações e plano de trabalho
+
+Trabalho em equipe · novembro de 2026
+
+## 1. Visão geral
+
+A equipe da horta do campus precisa registrar as regas para saber quando cada canteiro foi cuidado. O sistema é um diário de regas que pode ser consultado por canteiro.
+
+Este documento reúne o que o trabalho exige, como a equipe vai desenvolvê-lo e o que podemos acrescentar além do pedido.
+
+Protótipo de referência (layout e regras): https://claude.ai/artifact/Sg9qPMBFMifJzaAG7dnVQ6
+
+## 2. Especificações do trabalho
+
+### 2.1 Dados
+
+- **Canteiro:** nome (número) e cultura plantada.
+- **Registro de rega:** canteiro, data, nome fictício de quem fez a rega e observação opcional.
+
+### 2.2 Telas e funções
+
+- Cadastrar e editar registros de rega.
+- Listar os registros do mais recente para o mais antigo, com filtro por canteiro.
+- Mostrar a data da última rega de cada canteiro.
+
+### 2.3 Regras obrigatórias
+
+- A data da rega deve ser igual ou anterior à data de hoje.
+- Para este diário, há um registro por canteiro por dia.
+- Os nomes de quem fez a rega são sempre fictícios.
+
+### 2.4 Teste exigido
+
+1. Registrar regas em dois dias diferentes para o mesmo canteiro.
+2. Conferir se a data mais recente aparece como última rega.
+3. Tentar registrar outra rega no mesmo dia e canteiro: o sistema deve recusar.
+4. Cadastrar uma rega de outro canteiro nesse mesmo dia: o sistema deve aceitar.
+
+## 3. Como vamos fazer o trabalho
+
+### 3.1 Etapas
+
+1. **Preparação:** ler o enunciado juntos, definir a tecnologia da versão final e criar o repositório no GitHub.
+2. **Dados e regras:** modelar canteiro e registro de rega e implementar as validações antes das telas (data não posterior a hoje e um registro por canteiro por dia; na edição, o próprio registro não conta como duplicado).
+3. **Telas:** formulário de cadastro e edição, lista com filtro e resumo da última rega por canteiro.
+4. **Testes:** executar o roteiro da seção 2.4 e guardar prints ou um vídeo curto como evidência.
+5. **Fechamento:** revisão final em grupo, README e entrega.
+
+### 3.2 Divisão de tarefas
+
+| Área | Responsável |
+| --- | --- |
+| Telas | A definir |
+| Regras e dados | A definir |
+| Testes e prints | A definir |
+| README e entrega | A definir |
+
+Prazo de entrega: A definir
+
+### 3.3 Cuidados de uso e qualidade
+
+- Poucas telas, menu igual em todas e sempre um caminho de volta.
+- Canteiro escolhido em lista de seleção, nunca digitado.
+- Campo de data com calendário, preenchido com hoje e sem permitir data futura.
+- Mensagens de erro claras e junto do campo, sem perder o que o usuário digitou.
+- Datas no formato brasileiro (dd/mm/aaaa).
+- Bom contraste, uso pelo teclado e boa aparência no celular, já que o registro costuma ser feito na horta.
+
+### 3.4 Organização do projeto
+
+- Pastas separadas para telas, regras e dados, para evitar mexer no mesmo arquivo ao mesmo tempo.
+- Commits pequenos, com mensagens claras e o autor de cada parte.
+- README com o que o sistema faz, como rodar, as regras, os testes realizados e as funcionalidades extras.
+
+## 4. O que podemos adicionar ao trabalho
+
+Os itens abaixo vão além do enunciado. Nenhum deles muda as regras obrigatórias, e todos devem ser citados no README como funcionalidades extras.
+
+### 4.1 Já decididos pela equipe (presentes no protótipo)
+
+- **Novo canteiro ou troca de cultura:** no formulário de nova rega, o usuário informa o número do canteiro e a cultura, sem digitar nome. Se o número já existe, a cultura daquele canteiro é trocada, e as regas antigas mantêm a cultura que o canteiro tinha na data do registro.
+- **Cultura única:** a mesma cultura não pode aparecer em canteiros diferentes (ignora maiúsculas, acentos e plural). Isso evita repetições como "batata" duas vezes.
+- **Perdas:** registro das plantas que tiveram problema (queimou, estragou, animal comeu, praga ou doença, excesso ou falta de água), com canteiro, data, quantidade afetada, detalhes e quem registrou.
+- **Notificação:** ícone de plantinha no menu, normal quando está tudo certo e com bolinha vermelha quando há canteiro nunca regado, canteiro sem rega há 4 dias ou mais, ou perda recente. O painel de avisos leva direto ao registro de rega.
+
+### 4.2 Ideias para discutir
+
+- Filtro por canteiro e por tipo de problema na tela de perdas.
+- Gráfico ou resumo semanal de regas por canteiro.
+- Número de dias sem rega configurável para o alerta (hoje são 4).
+- Exportar os registros em CSV para anexar ao relatório.
+- Campo de foto da planta ou do problema.
+
+## 5. Checklist de entrega
+
+- [ ] Canteiro com nome e cultura.
+- [ ] Registro com canteiro, data, nome fictício e observação opcional.
+- [ ] Cadastro e edição funcionando.
+- [ ] Lista do mais recente para o mais antigo, com filtro por canteiro.
+- [ ] Última rega de cada canteiro visível.
+- [ ] Data futura recusada e data de hoje aceita.
+- [ ] Segundo registro no mesmo canteiro e dia recusado; outro canteiro no mesmo dia aceito.
+- [ ] Roteiro de teste feito, com prints ou vídeo.
+- [ ] README com funcionalidades extras citadas.
+- [ ] Revisão final em grupo.
