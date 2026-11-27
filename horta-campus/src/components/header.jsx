@@ -1,8 +1,11 @@
+import './header.css'
 
 function header() {
     return (
         <div className="header" role="banner">
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			<div id="header">
+				Teste
+			</div>
         </div>
     );
 }
